@@ -87,6 +87,12 @@ export default {
       type: [Number, String],
       default: null
     },
+    plusHeight: {
+      type: Number,
+      default: function() {
+        return 0;
+      }
+    },
     typeField: {
       type: String,
       default: "type"
@@ -361,7 +367,7 @@ export default {
                 startIndex > this.$_endIndex || endIndex < this.$_startIndex
               ); 
               this.itemContainerStyle = {
-                height: containerHeight + "px"
+                height: containerHeight + this.plusHeight + "px"
               };
               this.itemsStyle = {
                 marginTop: offsetTop + "px"

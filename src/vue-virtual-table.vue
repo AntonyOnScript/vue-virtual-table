@@ -337,6 +337,7 @@
           class="scroller"
           :items="dataTemp"
           :item-height="null"
+          :plus-height="plusHeight"
           content-tag="div"
           pool-size="500"
           ref="scroller"
@@ -656,6 +657,12 @@ export default {
       type: Number,
       default: function() {
         return 42;
+      }
+    },
+    plusHeight: {
+      type: Number,
+      default: function() {
+        return 0;
       }
     },
     refreshConfig: {
