@@ -336,7 +336,7 @@
         <virtual-scroller
           class="scroller"
           :items="dataTemp"
-          :item-height="itemHeight"
+          :item-height="null"
           content-tag="div"
           pool-size="500"
           ref="scroller"
