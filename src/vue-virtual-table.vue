@@ -341,6 +341,10 @@
           pool-size="500"
           ref="scroller"
         >
+          <template #before-content>
+            <slot name="before-content">
+            </slot>
+          </template>
           <template slot-scope="props">
             <div
               class="item-line"
@@ -408,7 +412,7 @@
                   <div
                     class="item-cell-inner"
                     v-else-if="item.eTip"
-                    :style="{ 
+                    :style="{
                       'align-items': item.alignItems || 'center',
                       'justify-content': item.justifyContent || 'center'
                     }"
@@ -502,7 +506,7 @@
                   <div
                     class="item-cell-inner"
                     v-else
-                    :style="{ 
+                    :style="{
                       'align-items': item.alignItems || 'center',
                       'justify-content': item.justifyContent || 'center'
                     }"
