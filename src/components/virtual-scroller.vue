@@ -212,6 +212,10 @@ export default {
   },
 
   mounted() {
+    this.$root.$on('callUpdateVisibleItems', (val = true) => { 
+      this.$_updateDirty = false
+      this.updateVisibleItems(val)
+    })
     this.applyPageMode();
     this.$nextTick(() => {
       this.updateVisibleItems(true);
@@ -220,6 +224,7 @@ export default {
   },
 
   beforeDestroy() {
+    this.$root.$off('callUpdateVisibleItems')
     this.removeWindowScroll();
   },
 
@@ -257,7 +262,7 @@ export default {
       }
     },
 
-    updateVisibleItems(force = false) {
+    updateVisibleItems(force = false) { 
       if (!this.$_updateDirty) {
         this.$_updateDirty = true;
         this.$nextTick(() => {
@@ -292,7 +297,7 @@ export default {
             }
 
             // Variable height mode
-            if (itemHeight === null) {
+            if (itemHeight === null) { 
               const heights = this.heights;
               let h;
               let a = 0;
@@ -331,7 +336,7 @@ export default {
                 // Bounds
                 endIndex > l && (endIndex = l);
               }
-            } else {
+            } else { 
               // Fixed height mode
               startIndex = ~~(scrollTop / itemHeight);
               endIndex = Math.ceil(scrollBottom / itemHeight);
@@ -351,11 +356,10 @@ export default {
               this.$_offsetTop !== offsetTop ||
               this.$_height !== containerHeight ||
               this.$_length !== l
-            ) {
+            ) { 
               this.keysEnabled = !(
                 startIndex > this.$_endIndex || endIndex < this.$_startIndex
-              );
-
+              ); 
               this.itemContainerStyle = {
                 height: containerHeight + "px"
               };
