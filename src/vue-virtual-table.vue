@@ -351,7 +351,7 @@
                 unselectable: !selectable,
                 'item-line-allow-hightlight': hoverHighlight
               }"
-              :style="{ height: itemHeight + 'px' }"
+              :style="{ 'min-height': itemHeight + 'px' }"
             >
               <div
                 class="item-cell"
