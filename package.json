@@ -1,12 +1,12 @@
 {
-  "name": "vue-virtual-table-variable-height",
+  "name": "vue-virtual-table-variable",
   "version": "0.2.22",
   "description": "vue table component with virtual dom. waningflow/vue-virtual-table fork",
   "author": "https://github.com/AnyonyOnScript",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AnyonyOnScript/vue-virtual-table-variable-height.git"
+    "url": "https://github.com/AnyonyOnScript/vue-virtual-table-variable.git"
   },
   "keywords": [
     "vue",
